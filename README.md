@@ -1,2 +1,6 @@
-# InventoryManagementSystem
-CMPSC132 Project 1
+# Inventory Management System
+## Introduction
+## Implemented Functionalities
+## Test cases
+## Discussion
+## Conclusion
