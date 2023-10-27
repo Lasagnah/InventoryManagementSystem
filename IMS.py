@@ -29,6 +29,12 @@ class Product:
     
     def getCount(self):
         return self.inStock
+    
+    def __repr__(self):
+        return self.name
+    
+    def __str__(self):
+        return self.name
 
 class Inventory:
     def __init__(self):
@@ -76,7 +82,7 @@ class Inventory:
 class Transaction:
     transactions = []
 
-    def sellItem(self, item, amt):
+    def sellItem(item, amt):
         #This function will check to see if we have enough items to sell
         #Then will add the transaction to the transaction list
         if amt > item.getCount():
@@ -86,7 +92,7 @@ class Transaction:
             item.sellItem(amt)
             return True
 
-    def getSalesReport(self):
+    def getSalesReport():
         #This function will return a dictionary of all of the items sold and the amount sold
         #Returns a dictionary with the format {item:amount sold}
         t_arr = []
@@ -103,7 +109,7 @@ class Transaction:
         d = dict(zip(i_arr, t_arr))
         return d 
 
-    def getStockReport(self, inventory):
+    def getStockReport(inventory):
         #This function will return a dictionary of all of the items and the amount in stock
         #Returns a dictionary with the format {item:amount in stock}
         t_arr = []
@@ -114,7 +120,7 @@ class Transaction:
         d = dict(zip(i_arr, t_arr))
         return d 
     
-    def getRevReport(self):
+    def getRevReport():
         #This function will return a dictionary of all of the items sold and the profit/revenue
         #Returns a dictionary with the format {item:revenue}
         t_arr = []
